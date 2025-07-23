@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LedgerFlow Register</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0d6efd;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-control:focus {
+      border-color: #0d6efd;
+      box-shadow: none;
+    }
+
+    .btn-register {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <div class="logo">LedgerFlow</div>
+    <form id="registerForm">
+      <div class="mb-3">
+        <label for="accountId" class="form-label">Account ID</label>
+        <input type="text" class="form-control" id="accountId" placeholder="Enter your account ID" required />
+      </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" required />
+      </div>
+      <div class="mb-3">
+        <label for="businessName" class="form-label">Business Name</label>
+        <input type="text" class="form-control" id="businessName" placeholder="Enter your business name" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" required />
+      </div>
+<div class="mb-3">
+  <label for="confirmPassword" class="form-label">Confirm Password</label>
+  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required />
+  <div class="invalid-feedback">
+    Passwords do not match.
+  </div>
+</div>
+      <button type="submit" class="btn btn-success btn-register">Register</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Optional JavaScript Validation -->
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Example debug log (replace with actual registration logic)
+      console.log("Registration successful!");
+      alert("Registration submitted!");
+    });
+  </script>
+</body>
+</html>
+
+
+
+<script>document.getElementById('registerForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // prevent form from submitting
+
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  // Proceed with form submission or API call
+  console.log("Registration successful!");
+  alert("Registration submitted!");
+});
+</script>
+
+<script>
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirmPassword');
+
+  document.getElementById('registerForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (password.value !== confirmPassword.value) {
+      confirmPassword.classList.add('is-invalid');
+      alert("Passwords do not match!");
+      return;
+    }
+
+    confirmPassword.classList.remove('is-invalid');
+    alert("Registration submitted!");
+  });
+
+  confirmPassword.addEventListener('input', function () {
+    if (confirmPassword.value !== password.value) {
+      confirmPassword.classList.add('is-invalid');
+    } else {
+      confirmPassword.classList.remove('is-invalid');
+    }
+  });
+</script>
+<div class="invalid-feedback">
+  Passwords do not match.
+</div>
+
+
+
+
